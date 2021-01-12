@@ -5,10 +5,8 @@ class Navigation extends Component {
   render(){
     return(
       <nav className="navbar narvbar-dark dg-dark">
-        <a href="" className="text-white">
-        {this.props.title}
-        </a>
-        <span className="badge badge-pill badge-light ml-2">
+        <a href="/" className="text-white">{this.props.title}</a>&nbsp;
+        <span className="badge badge-pill badge-light">
           {this.props.ntareas}
         </span>
       </nav>

@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Navigation from './components/Navigation'
 import { todos } from './todos.json'
@@ -35,7 +36,7 @@ class App extends Component {
         <div className="card mt-4">
           <div className="card-header">
             <h3 className="text-dark">{todo.title}</h3>
-            <span className="text-danger badge badge-danger ml-2">
+            <span className="badge badge-danger">
               {todo.priority}
             </span>
           </div>
