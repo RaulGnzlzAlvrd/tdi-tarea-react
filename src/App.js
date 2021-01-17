@@ -2,6 +2,7 @@ import { Component } from 'react'
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import './bootstrap-theme.css';
 import Navigation from './components/Navigation';
 import Todos from './components/Todos';
 import { todos } from './todos.json'
