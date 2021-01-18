@@ -1,6 +1,30 @@
 import { Component } from "react";
 
 class TodoForm extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			title: '',
+			priority: 'low',
+			responsable: '',
+			description: ''
+		};
+	}
+
+	clearForm() {
+		this.setState({
+			title: '',
+			priority: 'low',
+			responsable: '',
+			description: ''
+		});
+	}
+
+	saveTodo() {
+		this.props.saveTodo(this.state);
+		this.clearForm();
+	}
+
 	render() {
 		return (
 			<div className="container">
@@ -13,26 +37,26 @@ class TodoForm extends Component {
 							<div className="card-body">
 								<form>
 									<div className="form-group">
-										<label for="title" className="text-dark">Título</label>
-										<input type="text" className="form-control" id="title" placeholder="Tarea por hacer"/>
+										<label htmlFor="title" className="text-dark">Título</label>
+										<input type="text" className="form-control" id="title" placeholder="Tarea por hacer" value={this.state.title} onChange={(e) => this.setState({title: e.target.value})}/>
 									</div>
 									<div className="form-group">
-										<label for="responsable" className="text-dark">Responsable</label>
-										<input type="text" className="form-control" id="responsable" placeholder="¿Quién debe hacer la tarea?"/>
+										<label htmlFor="responsable" className="text-dark">Responsable</label>
+										<input type="text" className="form-control" id="responsable" placeholder="¿Quién debe hacer la tarea?" value={this.state.responsable} onChange={(e) => this.setState({responsable: e.target.value})}/>
 									</div>
 									<div className="form-group">
-										<label for="description" className="text-dark">Descripción</label>
-										<input type="text-area" className="form-control" id="description" placeholder="Detalles de la tarea"/>
+										<label htmlFor="description" className="text-dark">Descripción</label>
+										<input type="text" className="form-control" id="description" placeholder="Detalles de la tarea" value={this.state.description} onChange={(e) => this.setState({description: e.target.value})}/>
 									</div>
-									<div class="form-group">
-										<label for="priority">Prioridad</label>
-										<select class="form-control" id="priority">
+									<div className="form-group">
+										<label htmlFor="priority">Prioridad</label>
+										<select className="form-control" id="priority" value={this.state.priority} onChange={(e) => this.setState({priority: e.target.value})}>
 											<option value="low">Low</option>
 											<option value="medium">Medium</option>
 											<option value="high">High</option>
 										</select>
 									</div>
-									<button type="submit" class="btn btn-success">Guardar</button>
+									<button type="button" className="btn btn-success" onClick={() => this.saveTodo()}>Guardar</button>
 								</form>
 							</div>
 						</div>

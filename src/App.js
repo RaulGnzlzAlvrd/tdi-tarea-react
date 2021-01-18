@@ -23,6 +23,13 @@ class App extends Component {
     });
   }
 
+  saveTodo = (todo) => {
+    this.state.todos.push(todo);
+    this.setState({
+      todos: this.state.todos
+    });
+  }
+
   render(){
     return (
       <div className="App">
@@ -31,7 +38,7 @@ class App extends Component {
 
           <Todos todos={this.state.todos} onChangeTodos={this.handleChangeTodos.bind(this)} />
 
-          <TodoForm/>
+          <TodoForm saveTodo={this.saveTodo}/>
 
           <img src={logo} className="App-logo" alt="logo" />
           <p>

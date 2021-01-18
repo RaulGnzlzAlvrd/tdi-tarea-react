@@ -10,7 +10,7 @@ class Todos extends Component {
 		};
 	}
 	
-	removeTodo(index){
+	removeTodo = (index) => {
     if(window.confirm('Are you sure you want to delete it?')){
 			const update = this.state.todos.filter((todo, i) => i !== index);
       this.setState({
@@ -23,8 +23,8 @@ class Todos extends Component {
 
 	render() {
 		const todoList = this.state.todos.map((todo, i) => (
-			<div className="col-md-4" key={i}>
-				<Todo todo={todo} id={i} removeTodo={this.removeTodo.bind(this)}/>
+			<div className="col-md-4" key={todo.title + i}>
+				<Todo todo={todo} id={i} removeTodo={this.removeTodo}/>
 			</div>
 		));
 
