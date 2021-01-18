@@ -6,6 +6,7 @@ import './bootstrap-theme.css';
 import Navigation from './components/Navigation';
 import Todos from './components/Todos';
 import { todos } from './todos.json'
+import TodoForm from './components/TodoForm';
 
 class App extends Component {
   constructor(){
@@ -29,6 +30,8 @@ class App extends Component {
           <Navigation title={this.state.title} ntareas={this.state.todos.length} />
 
           <Todos todos={this.state.todos} onChangeTodos={this.handleChangeTodos.bind(this)} />
+
+          <TodoForm/>
 
           <img src={logo} className="App-logo" alt="logo" />
           <p>

@@ -27,7 +27,7 @@ class Todo extends Component {
 		return(
 			<div className="card mt-4">
 				<div className="card-header">
-					<h3 className="text-dark">
+					<h3 className="text-dark card-title">
 						{todo.title} &nbsp; 
 						<span style={{fontSize: 1 + 'rem'}} className={"badge badge-pill " + todo.badge}>
 							{todo.priority}
@@ -35,8 +35,8 @@ class Todo extends Component {
 					</h3>
 				</div>
 				<div className="card-body">
-					<p className="text-dark">{todo.description}</p>
-					<p><mark>{todo.responsable}</mark></p>
+					<p className="text-dark card-text">{todo.description}</p>
+					<p className="card-text"><mark>{todo.responsable}</mark></p>
 				</div>
 				<div className="card-footer">
 					<button 
